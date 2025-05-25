@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Hero + Tabs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        /* Load Raleway Regular */
+        @font-face {
+            font-family: 'Raleway';
+            src: url('./fonts/Raleway-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* Load Raleway Bold (optional) */
+        @font-face {
+            font-family: 'Raleway';
+            src: url('./fonts/Raleway-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #111;
+            color: #eee;
+        }
+
+        @keyframes bgZoom {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .animate-bgZoom {
+            animation: bgZoom 20s ease-in-out infinite;
+            will-change: transform;
+        }
+    </style>
+</head>
+
+<body class="bg-black w-full">
+
+    <!-- Hero Section -->
+    <section class="relative w-full h-screen overflow-hidden">
+        <!-- Zooming Background -->
+        <div class="absolute inset-0 bg-center bg-cover bg-no-repeat animate-bgZoom"
+            style="background-image: url('./assets/hero-section.png');">
+        </div>
+
+        <!-- Centered Logo -->
+        <div class="absolute inset-0 flex items-center justify-center z-10">
+            <img src="./assets/logo.png" alt="Logo" class="w-60 sm:w-96 max-w-full h-auto object-contain" />
+        </div>
+    </section>
+
+
+    <!-- Tabs Section -->
+    <section class="w-full bg-black py-6">
+        <div>
+            <div class="w-full overflow-x-auto">
+                <ul id="tabs" class="flex justify-center flex-wrap gap-2 lg:gap-4 text-sm font-medium text-gray-400">
+                    <li>
+                        <button
+                            class="tab-btn p-3  lg:p-4 w-32  lg:w-80 md:p-4 w-32  md:w-80 border-b-2 border-transparent text-center"
+                            data-tab="tab1">
+                            portfolio
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            class="tab-btn p-3  lg:p-4 w-32  lg:w-80 md:p-4 w-32  md:w-80 border-b-2 border-transparent text-center"
+                            data-tab="tab2">
+                            about
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            class="tab-btn p-3  lg:p-4 w-32  lg:w-80 md:p-4 w-32  md:w-80 border-b-2 border-transparent text-center"
+                            data-tab="tab3">
+                            contact
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="tab-contents">
+                <div id="tab1" class="tab-content">
+                    <div class="swiper swiper-container relative">
+                        <div class="swiper-wrapper">
+
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <img src="./assets/logo-design/1.jpg" class="w-full h-full object-contain"
+                                    alt="Logo 1" />
+
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">LOGO DESIGN</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">unique brand identity visuals</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <img src="./assets/logo-design/2.jpg" class="w-full h-full object-contain" alt="Logo 2">
+
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">LOGO DESIGN</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">unique brand identity visuals</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <img src="./assets/logo-design/3.jpg" class="w-full h-full object-contain" alt="Logo 3">
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">LOGO DESIGN</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">unique brand identity visuals</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="swiper swiper-container relative">
+                        <div class="swiper-wrapper">
+
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <img src="./assets/brochure-design/1.jpg" class="w-full h-full object-contain"
+                                    alt="Logo 1" />
+
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">BROCHURE DESIGN</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">Clear, professional layouts</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <img src="./assets/brochure-design/2.jpg" class="w-full h-full object-contain"
+                                    alt="Logo 2">
+
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">BROCHURE DESIGN</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">Clear, professional layouts</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <img src="./assets/brochure-design/3.jpg" class="w-full h-full object-contain"
+                                    alt="Logo 3">
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">BROCHURE DESIGN</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">Clear, professional layouts</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="swiper swiper-container relative">
+                        <div class="swiper-wrapper">
+
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <img src="./assets/packaging-design/1.jpg" class="w-full h-full object-contain"
+                                    alt="Logo 1" />
+
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">PACKAGING DESIGN</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">Clear, professional layouts</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <img src="./assets/packaging-design/2.jpg" class="w-full h-full object-contain"
+                                    alt="Logo 2">
+
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">PACKAGING DESIGN</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">Clear, professional layouts</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper swiper-container relative">
+                        <div class="swiper-wrapper">
+
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <img src="./assets/stationary-design/1.jpg" class="w-full h-full object-contain"
+                                    alt="Logo 1" />
+
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">STATIONARY DESIGN</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">Consistent, branded office essentials
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <img src="./assets/stationary-design/2.jpg" class="w-full h-full object-contain"
+                                    alt="Logo 2">
+
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">STATIONARY DESIGN</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">Consistent, branded office essentials
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <img src="./assets/stationary-design/3.jpg" class="w-full h-full object-contain"
+                                    alt="Logo 3">
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">STATIONARY DESIGN</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">Consistent, branded office essentials
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="swiper swiper-container relative">
+                        <div class="swiper-wrapper">
+
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <video class="w-full h-full object-contain" autoplay muted playsinline></video>
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">LOGO ANIMATION</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">Engaging, animated branding
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <video class="w-full h-full object-contain" autoplay muted playsinline></video>
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">LOGO ANIMATION</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">Engaging, animated branding
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="swiper-slide flex items-center justify-center relative">
+                                <video class="w-full h-full object-contain" autoplay muted playsinline></video>
+                                <div class="absolute bottom-0 w-full p-4 text-white text-start"
+                                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);">
+                                    <h3 class="text-1xl lg:text-3xl md:text-3xl font-bold">LOGO ANIMATION</h3>
+                                    <p class="text-1xl lg:text-3xl md:text-3xl">Engaging, animated branding
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab2" class="tab-content hidden py-10 space-y-10 px-4">
+                    <!-- First Description (3 Rows) -->
+                    <div class="text-gray-200 text-center space-y-2 max-w-5xl mx-auto">
+                        <p class="sm:text-lg md:text-xl lg:text-2xl">Our talented in-house design team collaborates
+                            seamlessly to deliver
+                            outstanding results. By combining diverse expertise, we ensure precision and creativity in
+                            every project. We pride ourselves on blending vision with execution.</p>
+                    </div>
+
+                    <!-- Team Section -->
+                    <div class="space-y-12 max-w-6xl mx-auto">
+                        <!-- Member 1 -->
+                        <div class="flex flex-col md:flex-row items-center md:items-center gap-8 text-white">
+                            <img src="./assets/img-1.png" alt="CEO" class="w-100 h-100 object-cover" />
+                            <div class="text-center md:text-left">
+                                <h3 class="text-2xl font-semibold">Suwetha</h3>
+                                <p class="text-gray-400">founder</p>
+                            </div>
+                        </div>
+                        <!-- Member 2 -->
+                        <div class="flex flex-col md:flex-row items-center md:items-center gap-8 text-white">
+                            <img src="./assets/img-2.png" alt="Employee 1" class="w-100 h-100 object-cover" />
+                            <div class="text-center md:text-left">
+                                <h3 class="text-2xl font-semibold">Suryanarayanan</h3>
+                                <p class="text-gray-400">chief executive officer</p>
+                            </div>
+                        </div>
+                        <!-- Member 3 -->
+                        <div class="flex flex-col md:flex-row items-center md:items-center gap-8 text-white">
+                            <img src="./assets/img-3.png" alt="Employee 2" class="w-100 h-100 object-cover" />
+                            <div class="text-center md:text-left">
+                                <h3 class="text-2xl font-semibold">jerush jaislin</h3>
+                                <p class="text-gray-400">post production</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Our Story -->
+                    <div class="text-gray-300 mx-auto space-y-4 max-w-7xl">
+                        <h2 class="text-3xl font-semibold text-white">our story</h2>
+                        <p class="text-base sm:text-lg md:text-xl lg:text-2xl">
+                            We believe good design and powerful storytelling can bring a brand’s essence and personality
+                            to life.
+                        </p>
+                        <p class="text-base sm:text-lg md:text-xl lg:text-2xl">
+                            From conception to project completion, listening is our top priority to ensure we deliver
+                            the best possible
+                            results for our clients.
+                        </p>
+                        <p class="text-base sm:text-lg md:text-xl lg:text-2xl">
+                            Our approach combines design inspiration from the art world with market research and
+                            analysis to provide a truly unique visual identity for our clients.
+                        </p>
+                    </div>
+
+                    <div class="flex justify-between flex-wrap mx-auto lg:text-6xl text-2xl font-bold max-w-7xl py-3">
+                        <span class="mx-2">innovate.</span>
+                        <span class="mx-2">create.</span>
+                        <span class="mx-2">captivate.</span>
+                    </div>
+
+                    <div class="w-full flex justify-center items-center">
+                        <img src="./assets/about-1.png" alt="About Image"
+                            class="w-full h-auto object-cover rounded-lg shadow-lg" />
+                    </div>
+
+                </div>
+
+                <div id="tab3" class="tab-content hidden py-10">
+                    <div class="max-w-2xl mx-auto text-white px-4">
+                        <h1 class="lg:text-5xl md:text-5xl text-3xl text-center"><span
+                                class="font-bold">FOGO</span><span class="px-4">got you
+                                puzzled?</span></h1>
+                        <h2 class="lg:text-3xl md:text-3xl text-2xl font-semibold text-center pt-10">got a project in
+                            mind?</h2>
+                        <h2 class="lg:text-3xl md:text-3xl text-2xl font-semibold mb-6 text-center">say hi !</h2>
+                        <form id="contactForm" class="space-y-6">
+                            <!-- First Name -->
+                            <div>
+                                <label for="first-name" class="block mb-2 text-sm font-medium text-white">
+                                    first name <span class="text-gray-100">*</span>
+                                </label>
+                                <input type="text" id="first-name" name="first-name" required
+                                    class="w-full p-3 bg-black text-white placeholder-gray-400 border-x border-b border-gray-600 border-t-0 rounded-md focus:outline-none"
+                                    placeholder="Enter your first name" />
+                            </div>
+
+                            <!-- Last Name -->
+                            <div>
+                                <label for="last-name" class="block mb-2 text-sm font-medium text-white">
+                                    last name <span class="text-gray-100">*</span>
+                                </label>
+                                <input type="text" id="last-name" name="last-name" required
+                                    class="w-full p-3 bg-black text-white placeholder-gray-400 border-x border-b border-gray-600 border-t-0 rounded-md focus:outline-none"
+                                    placeholder="Enter your last name" />
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block mb-2 text-sm font-medium text-white">
+                                    email <span class="text-gray-100">*</span>
+                                </label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full p-3 bg-black text-white placeholder-gray-400 border-x border-b border-gray-600 border-t-0 rounded-md focus:outline-none"
+                                    placeholder="Enter your email" />
+                            </div>
+
+                            <!-- Phone -->
+                            <div>
+                                <label for="phone" class="block mb-2 text-sm font-medium text-white">
+                                    phone <span class="text-gray-100">*</span>
+                                </label>
+                                <input type="tel" id="phone" name="phone" required
+                                    class="w-full p-3 bg-black text-white placeholder-gray-400 border-x border-b border-gray-600 border-t-0 rounded-md focus:outline-none"
+                                    placeholder="Enter your phone number" />
+                            </div>
+
+                            <!-- Curiosity -->
+                            <div>
+                                <label for="curious" class="block mb-2 text-sm font-medium text-white">
+                                    you are curious about? <span class="text-gray-100">*</span>
+                                </label>
+                                <textarea id="curious" name="curious" rows="3" required
+                                    class="w-full p-3 bg-black text-white placeholder-gray-400 border-x border-b border-gray-600 border-t-0 rounded-md focus:outline-none"
+                                    placeholder="Tell us what you're curious about..."></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div>
+                                <button type="submit"
+                                    class="w-full bg-black text-white font-semibold py-3 px-6 rounded-full border-x border-b border-gray-600 border-t-0 hover:bg-gray-500 transition duration-300">
+                                    submit
+                                </button>
+                            </div>
+                        </form>
+                        <!-- Error Message Display -->
+                        <p id="formMessage" class="text-sm text-red-500 mt-4 hidden">Please fill in all required fields.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Centered Footer -->
+    <footer class="bg-black pt-10 py-5 px-4 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto space-y-6 sm:space-y-0">
+
+            <!-- Top Row: Contact + Follow with Center Text -->
+            <div
+                class="flex sm:flex-row justify-between items-start sm:items-center text-start sm:text-left gap-6 sm:gap-0 relative">
+
+                <!-- Contact -->
+                <div class="space-y-2 sm:w-1/3">
+                    <h3 class="text-white text-2xl sm:text-4xl font-semibold">contact</h3>
+                    <p>hello@crae.in</p>
+                    <p>+91 81240 06335</p>
+                </div>
+
+                <!-- Center: Copyright -->
+                <div class="sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 pt-16">
+                    <p class="text-sm text-gray-400">2025 by CRAE</p>
+                </div>
+
+                <!-- Follow -->
+                <div class="space-y-2 sm:w-1/3 text-right">
+                    <h3 class="text-white text-2xl sm:text-4xl font-semibold">follow us</h3>
+                    <p><a href="https://instagram.com" target="_blank" class="hover:text-white">Instagram</a></p>
+                    <p><a href="https://wa.me/1234567890" target="_blank" class="hover:text-white">WhatsApp</a></p>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const tabs = document.querySelectorAll('[data-tab]');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetTabId = tab.getAttribute('data-tab');
+
+                // Remove active styling from all tabs
+                tabs.forEach(t => {
+                    t.classList.remove('text-white', 'border-white');
+                    t.classList.add('text-gray-400', 'border-transparent');
+                });
+
+                // Hide all tab contents
+                tabContents.forEach(tc => tc.classList.add('hidden'));
+
+                // Add active styles to clicked tab
+                tab.classList.remove('text-gray-400', 'border-transparent');
+                tab.classList.add('text-white', 'border-white');
+
+                // Show corresponding tab content
+                document.getElementById(targetTabId).classList.remove('hidden');
+            });
+        });
+
+        // Optional: set first tab active on page load
+        document.querySelector('[data-tab="tab1"]').click();
+
+
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 3000, // 3 seconds
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Check form validity
+            if (!form.checkValidity()) {
+                formMessage.classList.remove('hidden');
+                formMessage.textContent = "Please fill in all required fields.";
+                return;
+            }
+
+            // Hide message on valid
+            formMessage.classList.add('hidden');
+
+            // Prepare form data
+            const data = {
+                firstName: form['first-name'].value,
+                lastName: form['last-name'].value,
+                email: form['email'].value,
+                phone: form['phone'].value,
+                curious: form['curious'].value
+            };
+
+            // 👉 Replace this part with real email sending (via EmailJS, Formspree, or backend)
+            console.log('Sending data:', data);
+            alert('Form submitted successfully! (simulate email sent)');
+
+            form.reset();
+        });
+
+        const videos = document.querySelectorAll('video');
+
+        videos.forEach((video, index) => {
+            // Set video sources
+            video.src = `./assets/logo-animation/video-${index + 1}.mp4`;
+
+            // Add event listener to go to next slide on end
+            video.addEventListener('ended', () => {
+                if (index + 1 < videos.length) {
+                    swiper.slideTo(index + 1);
+                } else {
+                    swiper.slideTo(0);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
